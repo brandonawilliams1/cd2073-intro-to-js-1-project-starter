@@ -13,7 +13,7 @@ let inventory1 = {
   name: 'cherry',
   price: 5.99,
   quantity: 10,
-  productId: 1985,
+  productId: 1,
   image: 'starter\src\images\cherry.jpg'
 };
 
@@ -21,7 +21,7 @@ let inventory2 = {
   name: 'orange',
   price: 3.99,
   quantity: 20,
-  productId: 1986,
+  productId: 2,
   image: 'starter\src\images\orange.jpg'
 
   
@@ -31,7 +31,7 @@ let inventory3 = {
   name: 'strawberry',
   price: 7.99,
   quantity: 30,
-  productId: 1987,
+  productId: 3,
   image: 'starter\src\images\strawberry.jpg'
 
 };
@@ -61,11 +61,6 @@ function addProductToCart(productId) {
           break;
         }
       }
-      if (!productFound) {
-        cart.push(Object.assign({}, products[i]));
-        cart[cart.length - 1].quantity = 1;
-      }
-      break;
     }
   }
 }
