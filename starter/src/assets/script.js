@@ -1,5 +1,5 @@
 /* Create an array named products which you will use to add all of your product object literals that you create in the next step. */
-let products = [];
+let products = [inventory1, inventory2, inventory3];
 
 /* Create 3 or more product objects using object literal notation 
    Each product should include five properties
@@ -14,7 +14,7 @@ let inventory1 = {
   price: 5.99,
   quantity: 10,
   productId: 1,
-  image: 'starter\src\images\cherry.jpg'
+  image: 'images/cherry.jpg'
 };
 
 let inventory2 = {
@@ -22,7 +22,7 @@ let inventory2 = {
   price: 3.99,
   quantity: 20,
   productId: 2,
-  image: 'starter\src\images\orange.jpg'
+  image: 'images/orange.jpg'
 
   
 };
@@ -32,7 +32,7 @@ let inventory3 = {
   price: 7.99,
   quantity: 30,
   productId: 3,
-  image: 'starter\src\images\strawberry.jpg'
+  image: 'images/strawberry.jpg'
 
 };
 
@@ -45,6 +45,16 @@ let inventory3 = {
 /* Declare an empty array named cart to hold the items in the cart */
 const cart = [];
 
+//suggestions from TA
+function getProductByIdFromList(productId, productList) {
+  return productList.find((product) => product.productId === productId);
+}
+let product = getProductByIdFromList(productId, products, cart);
+
+if (!cart.includes(product)) {
+ product = product + cart.push(productId)
+
+};
 /* Create a function named addProductToCart that takes in the product productId as an argument
   - addProductToCart should get the correct product based on the productId
   - addProductToCart should then increase the product's quantity
@@ -63,6 +73,7 @@ function addProductToCart(productId) {
       }
     }
   }
+
 }
 
 /* Create a function named increaseQuantity that takes in the productId as an argument
