@@ -49,10 +49,10 @@ const cart = [];
 function getProductByIdFromList(productId, productList) {
   return productList.find((product) => product.productId === productId);
 }
-let product = getProductByIdFromList(productId, products, cart);
+let product = getProductByIdFromList(productId, products);
 
 if (!cart.includes(product)) {
- product = product + cart.push(productId)
+ product = product + cart.push(product)
 
 };
 /* Create a function named addProductToCart that takes in the product productId as an argument
@@ -64,6 +64,7 @@ function addProductToCart(productId) {
   let productFound = false;
   for (let i = 0; i < products.length; i++) {
     if (products[i].productId === productId) {
+      product = getProductByIdFromList(productId, products)//helper function
       for (let j = 0; j < cart.length; j++) {
         if (cart[j].productId === productId) {
           cart[j].quantity++;
