@@ -1,5 +1,5 @@
 /* Create an array named products which you will use to add all of your product object literals that you create in the next step. */
-let products = [inventory1, inventory2, inventory3];
+let products = [];
 
 /* Create 3 or more product objects using object literal notation 
    Each product should include five properties
@@ -35,6 +35,7 @@ let inventory3 = {
   image: 'images/strawberry.jpg'
 
 };
+products.push(inventory1, inventory2, inventory3) // push inventory to the prod. array
 
 /* Images provided in /images folder. All images from Unsplash.com
    - cherry.jpg by Mae Mu
@@ -45,11 +46,13 @@ let inventory3 = {
 /* Declare an empty array named cart to hold the items in the cart */
 const cart = [];
 
+
 //suggestions from TA
 function getProductByIdFromList(productId, productList) {
   return productList.find((product) => product.productId === productId);
-}
-let product = getProductByIdFromList(productId, products);
+};
+
+let product = getProductByIdFromList(productId, products, cart);
 
 if (!cart.includes(product)) {
  product = product + cart.push(product)
@@ -64,7 +67,8 @@ function addProductToCart(productId) {
   let productFound = false;
   for (let i = 0; i < products.length; i++) {
     if (products[i].productId === productId) {
-      product = getProductByIdFromList(productId, products)//helper function
+      //helper function
+      product = getProductByIdFromList(productId, products) 
       for (let j = 0; j < cart.length; j++) {
         if (cart[j].productId === productId) {
           cart[j].quantity++;
@@ -75,6 +79,10 @@ function addProductToCart(productId) {
     }
   }
 
+};
+//suggetsed by ta
+if (!cart.includes(product)) {
+  cart.push(product);
 }
 
 /* Create a function named increaseQuantity that takes in the productId as an argument
@@ -88,7 +96,9 @@ function increaseQuantity(productId) {
       break;
     }
   }
-}
+};
+//helper function
+product = product.increaseQuantity() + 1;
 
 /* Create a function named decreaseQuantity that takes in the productId as an argument
   - decreaseQuantity should get the correct product based on the productId
@@ -108,6 +118,8 @@ function decreaseQuantity(productId) {
     }
   }
 }
+//helper function 
+product = product.decreaseQuantity() - 1;
 /* Create a function named removeProductFromCart that takes in the productId as an argument
   - removeProductFromCart should get the correct product based on the productId
   - removeProductFromCart should update the product quantity to 0
@@ -121,7 +133,9 @@ function removeProductFromCart(productId) {
       break;
     }
   }
-}
+};
+//helper fuction
+product = product.removeQuantity();
 
 /* Create a function named cartTotal that has no parameters
   - cartTotal should iterate through the cart to get the total of all products
