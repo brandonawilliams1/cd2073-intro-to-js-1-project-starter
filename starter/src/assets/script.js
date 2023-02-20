@@ -67,8 +67,6 @@ function addProductToCart(productId) {
   let productFound = false;
   for (let i = 0; i < products.length; i++) {
     if (products[i].productId === productId) {
-      //helper function
-      product = getProductByIdFromList(productId, products) 
       for (let j = 0; j < cart.length; j++) {
         if (cart[j].productId === productId) {
           cart[j].quantity++;
@@ -78,8 +76,16 @@ function addProductToCart(productId) {
       }
     }
   }
+};
+//helper function
+function helpAddProductToCart(productId, products, cart){
+let productId = products.productId
+let cart = productId.push(cart)
+  return addProductToCart()
 
 };
+
+
 //suggetsed by ta
 if (!cart.includes(product)) {
   cart.push(product);
@@ -98,7 +104,10 @@ function increaseQuantity(productId) {
   }
 };
 //helper function
-product = product.increaseQuantity() + 1;
+function helpIncreaseQuantity(product){
+let product = product.quantity +1;
+return increaseQuantity();
+};
 
 /* Create a function named decreaseQuantity that takes in the productId as an argument
   - decreaseQuantity should get the correct product based on the productId
@@ -119,7 +128,12 @@ function decreaseQuantity(productId) {
   }
 }
 //helper function 
-product = product.decreaseQuantity() - 1;
+helpDecreaseQuantity(productId, cart){
+  let product = cart.productId - 1 
+  if (product.quantity === 0){
+    removeProductFromCart(product.productId);
+  };
+};
 /* Create a function named removeProductFromCart that takes in the productId as an argument
   - removeProductFromCart should get the correct product based on the productId
   - removeProductFromCart should update the product quantity to 0
@@ -135,7 +149,7 @@ function removeProductFromCart(productId) {
   }
 };
 //helper fuction
-product = product.removeQuantity();
+
 
 /* Create a function named cartTotal that has no parameters
   - cartTotal should iterate through the cart to get the total of all products
