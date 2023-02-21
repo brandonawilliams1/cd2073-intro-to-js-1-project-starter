@@ -48,11 +48,11 @@ const cart = [];
 
 
 //suggestions from TA
-function getProductByIdFromList(productId, productList) {
+function getProductByIdFromList(product) {
   return productList.find((product) => product.productId === productId);
 };
 
-let product = getProductByIdFromList(productId, products, cart);
+let product = getProductByIdFromList(productId, products);
 
 if (!cart.includes(product)) {
  product = product + cart.push(product)
@@ -78,12 +78,14 @@ function addProductToCart(productId) {
   }
 };
 //helper function
-function helpAddProductToCart(productId, products, cart){
+function helpAddProductToCart(){
 let productId = products.productId
 let cart = productId.push(cart)
-  return addProductToCart()
-
+  
+return addProductToCart()
 };
+
+helpAddProductToCart();    
 
 
 //suggetsed by ta
@@ -104,10 +106,12 @@ function increaseQuantity(productId) {
   }
 };
 //helper function
-function helpIncreaseQuantity(product){
+function helpIncreaseQuantity(){
 let product = product.quantity +1;
 return increaseQuantity();
 };
+
+helpIncreaseQuantity();
 
 /* Create a function named decreaseQuantity that takes in the productId as an argument
   - decreaseQuantity should get the correct product based on the productId
@@ -126,14 +130,16 @@ function decreaseQuantity(productId) {
       break;
     }
   }
-}
-//helper function 
-helpDecreaseQuantity(productId, cart){
-  let product = cart.productId - 1 
-  if (product.quantity === 0){
-    removeProductFromCart(product.productId);
-  };
 };
+//helper function 
+function helpDecreaseQuantity(){
+  if (product.quantity === 0){
+    removeProductFromCart(product.productId)
+  };
+return decreaseQuantity();
+};
+
+helpDecreaseQuantity();
 /* Create a function named removeProductFromCart that takes in the productId as an argument
   - removeProductFromCart should get the correct product based on the productId
   - removeProductFromCart should update the product quantity to 0
@@ -149,7 +155,16 @@ function removeProductFromCart(productId) {
   }
 };
 //helper fuction
+function helpRemoveProductFromCart (productId){
+  let product = productId;
+  product.quantity = 0;
 
+  cart.splice(cart.indexOf(product), 1);
+
+  return removeProductFromCart
+};
+
+helpRemoveProductFromCart();
 
 /* Create a function named cartTotal that has no parameters
   - cartTotal should iterate through the cart to get the total of all products
@@ -173,9 +188,11 @@ function emptyCart() {
   - pay will return a positive number if money should be returned to customer
 */
 let totalCost = 100;
+let totalPaid = 0;
 
 function pay(amount) {
   let remainingBalance = totalCost - amount;
+  
   return remainingBalance;
 }
 
