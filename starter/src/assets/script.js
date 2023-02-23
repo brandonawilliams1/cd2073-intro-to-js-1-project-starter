@@ -31,7 +31,7 @@ let inventory3 = {
   name: 'strawberry',
   price: 7.99,
   quantity: 30,
-  productId: 3,
+  productId: 'stwB3',
   image: 'images/strawberry.jpg'
 
 };
@@ -55,8 +55,19 @@ const cart = [];
   - if the product is not already in the cart, add it to the cart
 */
 
-function addProductToCart(products) {
-  let products = 
+function addProductToCart(productId) {
+  //store find method in variable
+  let product = products.find(products >= products.productId === productId);
+  // a for loop thagt loops over the products array
+  for (let i = 0; i < products.length; i++){
+    // create a condition to find the product by its id
+    if(product === productId){
+      productId.push(cart)
+    };
+  };
+
+  console.log(addProductToCart(products.productId))
+  console.log(cart)
   // let productFound = false;
   // for (let i = 0; i < products.length; i++) {
   //   if (products[i].productId === products) {
@@ -70,7 +81,7 @@ function addProductToCart(products) {
   //   }
   // }
 };
-console.log(addProductToCart())
+console.log(addProductToCart(stwB3))
 console.log(cart)
 //helper function
 // function helpAddProductToCart(){
