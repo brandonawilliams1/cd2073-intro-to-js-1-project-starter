@@ -81,7 +81,7 @@ function addProductToCart(productId) {
   //   }
   // }
 };
-console.log(addProductToCart(stwB3))
+console.log(addProductToCart('stwB3'))
 console.log(cart)
 //helper function
 // function helpAddProductToCart(){
