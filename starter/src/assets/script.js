@@ -13,7 +13,7 @@ let inventory1 = {
   name: 'cherry',
   price: 5.99,
   quantity: 10,
-  productId: 1,
+  productId: 'chry1',
   image: 'images/cherry.jpg'
 };
 
@@ -21,7 +21,7 @@ let inventory2 = {
   name: 'orange',
   price: 3.99,
   quantity: 20,
-  productId: 2,
+  productId: 'orng1',
   image: 'images/orange.jpg'
 
   
@@ -31,7 +31,7 @@ let inventory3 = {
   name: 'strawberry',
   price: 7.99,
   quantity: 30,
-  productId: 'stwB3',
+  productId: 'stwB1',
   image: 'images/strawberry.jpg'
 
 };
@@ -56,21 +56,29 @@ const cart = [];
 */
 
 function addProductToCart(productId) {
-  //store find method in variable
-  let product = products.find(products >= products.productId === productId);
-  // a for loop thagt loops over the products array
-  for (let i = 0; i < products.length; i++){
-    // create a condition to find the product by its id
-    if(product === productId){
-      productId.push(cart)
-    };
-  };
+  let found = false;
 
-  console.log(addProductToCart(products.productId))
-  console.log(cart)
+  for (let i = 0; i < products.length; i++){
+    for(let j = 0; products[j] < i; i++){
+      if(productId === products.productId){
+        found = true;
+        
+      }
+    }
+  }
+  console.log(found)
+  // // a for loop that loops over the products array
+  // for (let i = 0; i < products.length; i++){
+  //   // create a condition to find the product by its id
+  //   if(products.productId === productId){
+  //     //push the matchying product id to the cart
+  //     cart.push(productId)
+  //   };
+  // };
+
   // let productFound = false;
   // for (let i = 0; i < products.length; i++) {
-  //   if (products[i].productId === products) {
+  //   if (products[i].productId === productId) {
   //     for (let j = 0; j < cart.length; j++) {
   //       if (cart[j].productId === products) {
   //         cart[j].quantity++;
@@ -80,9 +88,10 @@ function addProductToCart(productId) {
   //     }
   //   }
   // }
+  // return console.log(productFound)
+
 };
-console.log(addProductToCart('stwB3'))
-console.log(cart)
+console.log(addProductToCart("stwB1"))
 //helper function
 // function helpAddProductToCart(){
 // let productId = products.productId
