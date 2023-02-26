@@ -13,7 +13,7 @@ let inventory1 = {
   name: 'cherry',
   price: 5.99,
   quantity: 10,
-  productId: 'chry1',
+  productId: 1,
   image: 'images/cherry.jpg'
 };
 
@@ -21,7 +21,7 @@ let inventory2 = {
   name: 'orange',
   price: 3.99,
   quantity: 20,
-  productId: 'orng1',
+  productId: 2,
   image: 'images/orange.jpg'
 
   
@@ -31,14 +31,13 @@ let inventory3 = {
   name: 'strawberry',
   price: 7.99,
   quantity: 30,
-  productId: 'stwB1',
+  productId: 3,
   image: 'images/strawberry.jpg'
 
 };
 
 // push inventory to the prod. array
 products.push(inventory1, inventory2, inventory3);
-
 
 /* Images provided in /images folder. All images from Unsplash.com
    - cherry.jpg by Mae Mu
@@ -56,51 +55,18 @@ const cart = [];
 */
 
 function addProductToCart(productId) {
-  let found = false;
-
-  for (let i = 0; i < products.length; i++){
-    for(let j = 0; products[j] < i; i++){
-      if(productId === products.productId){
-        found = true;
-        
-      }
-    }
-  }
-  console.log(found)
-  // // a for loop that loops over the products array
-  // for (let i = 0; i < products.length; i++){
-  //   // create a condition to find the product by its id
-  //   if(products.productId === productId){
-  //     //push the matchying product id to the cart
-  //     cart.push(productId)
-  //   };
-  // };
-
-  // let productFound = false;
-  // for (let i = 0; i < products.length; i++) {
-  //   if (products[i].productId === productId) {
-  //     for (let j = 0; j < cart.length; j++) {
-  //       if (cart[j].productId === products) {
-  //         cart[j].quantity++;
-  //         productFound = true;
-  //         break;
-  //       }
-  //     }
-  //   }
-  // }
-  // return console.log(productFound)
-
+  for (let x = 0; x < products.length; x = x + 1) {
+    for (let y = 0; y < products.length; y = y + 1) {
+      if(products[y].productId  === productId){
+        console.log(products[y]);
+      };
+    };
+    break;
+  };
 };
-console.log(addProductToCart("stwB1"))
+addProductToCart();
 //helper function
-// function helpAddProductToCart(){
-// let productId = products.productId
-// let cart = productId.push(cart)
-  
-// return addProductToCart()
-// };
-
-// helpAddProductToCart();    
+   
 
 // /* Create a function named increaseQuantity that takes in the productId as an argument
 //   - increaseQuantity should get the correct product based on the productId
