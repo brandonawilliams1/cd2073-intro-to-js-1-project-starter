@@ -63,10 +63,10 @@ function addProductToCart(productId) {
     };
     break;
   };
+  cart.push(productId)
+  console.log(cart)
 };
-addProductToCart();
-//helper function
-   
+addProductToCart()
 
 // /* Create a function named increaseQuantity that takes in the productId as an argument
 //   - increaseQuantity should get the correct product based on the productId
@@ -180,17 +180,17 @@ addProductToCart();
 //    npm run test
 // */
 
-// module.exports = {
-//    products,
-//    cart,
-//    addProductToCart,
-//    increaseQuantity,
-//    decreaseQuantity,
-//    removeProductFromCart,
-//    cartTotal,
-//    pay, 
-//    emptyCart,
-//    /* Uncomment the following line if completing the currency converter bonus */
-//    // currency
-// }
+module.exports = {
+   products,
+   cart,
+   addProductToCart,
+  //  increaseQuantity,
+  //  decreaseQuantity,
+  //  removeProductFromCart,
+  //  cartTotal,
+  //  pay, 
+  //  emptyCart,
+   /* Uncomment the following line if completing the currency converter bonus */
+   // currency
+}
 
