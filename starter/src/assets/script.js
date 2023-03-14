@@ -54,17 +54,26 @@ const cart = [];
   - if the product is not already in the cart, add it to the cart
 */
 
+//helper function
+const item = function (productId){
+  // this function runs a find method on the products arr and returns the obj by id
+    return products.find((product) => product.productId === productId);
+};
+
+
 function addProductToCart(productId) {
   for (let x = 0; x < products.length; x = x + 1) {
     for (let y = 0; y < products.length; y = y + 1) {
       if(products[y].productId  === productId){
-        cart.push(productId)
+        item(productId);
+        //need to move entire obj in to cart
+        cart.push(products[y])
       };
     };
     break;
+    
   };
-  
-  console.log(cart)
+  return console.log('done')
 };
 
 /* Create a function named increaseQuantity that takes in the productId as an argument
@@ -79,13 +88,6 @@ function increaseQuantity(productId) {
     }
   }
 };
-//helper function
-function helpIncreaseQuantity(){
-let product = product.quantity +1;
-return increaseQuantity();
-};
-
-helpIncreaseQuantity();
 
 /* Create a function named decreaseQuantity that takes in the productId as an argument
   - decreaseQuantity should get the correct product based on the productId
@@ -105,15 +107,6 @@ function decreaseQuantity(productId) {
     }
   }
 };
-//helper function 
-function helpDecreaseQuantity(){
-  if (product.quantity === 0){
-    removeProductFromCart(product.productId)
-  };
-return decreaseQuantity();
-};
-
-helpDecreaseQuantity();
 /* Create a function named removeProductFromCart that takes in the productId as an argument
   - removeProductFromCart should get the correct product based on the productId
   - removeProductFromCart should update the product quantity to 0
@@ -128,17 +121,7 @@ function removeProductFromCart(productId) {
     }
   }
 };
-//helper fuction
-function helpRemoveProductFromCart (productId){
-  let product = productId;
-  product.quantity = 0;
 
-  cart.splice(cart.indexOf(product), 1);
-
-  return removeProductFromCart
-};
-
-helpRemoveProductFromCart();
 
 /* Create a function named cartTotal that has no parameters
   - cartTotal should iterate through the cart to get the total of all products
@@ -168,7 +151,7 @@ function pay(amount) {
   let remainingBalance = totalCost - amount;
 
   return remainingBalance;
-}
+};
 
 /* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
 
