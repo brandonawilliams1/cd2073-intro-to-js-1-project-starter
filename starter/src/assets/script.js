@@ -12,7 +12,7 @@ let products = [];
 let inventory1 = {
   name: 'cherry',
   price: 5.99,
-  quantity: 10,
+  quantity: 1, // by setting the quantity to default 1 when the add func pulls the odj it only adds the one on the obj w/o depleting the quan on the obj.
   productId: 1,
   image: 'images/cherry.jpg'
 };
@@ -20,7 +20,7 @@ let inventory1 = {
 let inventory2 = {
   name: 'orange',
   price: 3.99,
-  quantity: 20,
+  quantity: 1,
   productId: 2,
   image: 'images/orange.jpg'
 
@@ -30,7 +30,7 @@ let inventory2 = {
 let inventory3 = {
   name: 'strawberry',
   price: 7.99,
-  quantity: 30,
+  quantity: 1,
   productId: 3,
   image: 'images/strawberry.jpg'
 
@@ -66,6 +66,8 @@ function addProductToCart(productId) {
     for (let y = 0; y < products.length; y = y + 1) {
       if(products[y].productId  === productId){
         item(productId);
+        // make sure only 1 product is added from the odj
+        
         //need to move entire obj in to cart
         cart.push(products[y])
       };
@@ -73,7 +75,7 @@ function addProductToCart(productId) {
     break;
     
   };
-  return console.log('done')
+  return console.log('product added to cart')
 };
 
 /* Create a function named increaseQuantity that takes in the productId as an argument
