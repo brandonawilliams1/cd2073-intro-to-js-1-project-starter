@@ -147,15 +147,16 @@ function emptyCart() {
   - pay will return a negative number if there is a remaining balance
   - pay will return a positive number if money should be returned to customer
 */
-let totalCost = 100;
-let totalPaid = 0;
 
 function pay(amount) {
-  let remainingBalance = totalCost - amount;
-
-  return remainingBalance;
+  if(amount < cartTotal()){
+    return cartTotal() - amount;
+  }else if(amount > cartTotal()){
+    return amount - cartTotal();
+  }else{
+    return cartTotal()
+  };
 };
-
 /* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
 
 
