@@ -12,7 +12,7 @@ let products = [];
 let inventory1 = {
   name: 'cherry',
   price: 5.99,
-  quantity: 1, // by setting the quantity to default 1 when the add func pulls the odj it only adds the one on the obj w/o depleting the quan on the obj.
+  quantity: 1,
   productId: 1,
   image: 'images/cherry.jpg'
 };
@@ -20,6 +20,7 @@ let inventory1 = {
 let inventory2 = {
   name: 'orange',
   price: 3.99,
+  // by setting the quantity to default 1 when the add func pulls the odj it only adds the one on the obj w/o depleting the quan on the obj.
   quantity: 1,
   productId: 2,
   image: 'images/orange.jpg'
