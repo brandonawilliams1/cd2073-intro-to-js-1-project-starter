@@ -63,7 +63,7 @@ const item = function (productId){
 
 
 function addProductToCart(productId) {
-  for (let x = 0; x < products.length; x = x + 1) {
+  for (let x = 0; x < products.length; x++) {
     for (let y = 0; y < products.length; y = y + 1) {
       if(products[y].productId  === productId){
         let product = item(productId);
