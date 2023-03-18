@@ -66,7 +66,6 @@ function addProductToCart(productId) {
   for (let x = 0; x < products.length; x = x + 1) {
     for (let y = 0; y < products.length; y = y + 1) {
       if(products[y].productId  === productId){
-        // item(productId);
         let product = item(productId);
 
         product.quantity += 1;
