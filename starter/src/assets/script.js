@@ -153,14 +153,19 @@ function emptyCart() {
 */
 
 function pay(amount) {
-  if(amount < cartTotal()){
-    return cartTotal() - amount;
-  }else if(amount > cartTotal()){
-    return amount - cartTotal();
-  }else{
-    return cartTotal()
-  };
+  
+  let totalPaid = cartTotal();
+  let change = amount - totalPaid;
+
+  if (change >= 0) {
+   // Return positive number change if amount is greater than or equal to cartTotal
+    return change;
+  } else {
+   // Return negative numb change if amount is less than cartTotal 
+    return change; 
+  }
 };
+
 /* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
 
 
