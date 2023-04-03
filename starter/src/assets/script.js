@@ -152,16 +152,17 @@ function emptyCart() {
   - pay will return a positive number if money should be returned to customer
 */
 
+
 function pay(amount) {
-  
   let totalPaid = cartTotal();
+  
   let change = amount - totalPaid;
 
   if (change >= 0) {
-   // Return positive number change if amount is greater than or equal to cartTotal
+   // Return positive numif amount is greater than or equal to cartTotal
     return change;
   } else {
-   // Return negative numb change if amount is less than cartTotal 
+   // Return negative num if amount is less than cartTotal 
     return change; 
   }
 };
