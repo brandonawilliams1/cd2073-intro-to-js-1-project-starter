@@ -55,10 +55,14 @@ const cart = [];
   - if the product is not already in the cart, add it to the cart
 */
 
-//helper function
+//helper functions
 const item = function (productId){
   // this function runs a find method on the products arr and returns the obj by id
     return products.find((product) => product.productId === productId);
+};
+
+function round(num){
+  return Number.parseFloat(num).toFixed(2)
 };
 
 
@@ -139,7 +143,7 @@ function cartTotal() {
   for (let i = 0; i < cart.length; i++) {
     total += cart[i].quantity * cart[i].price;
   }
-  return total;
+  return round(total);
 }
 
 /* Create a function called emptyCart that empties the products from the cart */
@@ -152,11 +156,10 @@ function emptyCart() {
   - pay will return a positive number if money should be returned to customer
 */
 
-
 function pay(amount) {
   let totalPaid = cartTotal();
   
-  let change = amount - totalPaid;
+  let change = round(amount - totalPaid);
 
   if (change >= 0) {
    // Return positive numif amount is greater than or equal to cartTotal
